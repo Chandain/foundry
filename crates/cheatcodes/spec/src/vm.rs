@@ -2755,6 +2755,8 @@ interface Vm {
         pure
         returns (address[] memory);
     /// Parses a string of JSON data at `key` and coerces it to `string`.
+    /// The "key" using JSONPath Syntx
+    /// use a dot-prefixed such as ".bar" to access the "bar" field.
     #[cheatcode(group = Json)]
     function parseJsonString(string calldata json, string calldata key) external pure returns (string memory);
     /// Parses a string of JSON data at `key` and coerces it to `string`, or returns `defaultValue` if the key does not exist.
